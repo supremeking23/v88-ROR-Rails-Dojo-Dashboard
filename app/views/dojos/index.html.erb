@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h2>Listing <span><%= @dojos.length %></span> Dojos</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+			<table class="responsive-table striped">
+				<thead>
+					<tr>
+						<th>Coding Dojo Branch</th>
+						<th>Street</th>
+						<th>City</th>
+						<th>State</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @dojos.each do |dojo| %>
+					<tr>
+						<td><%= dojo.branch%></td>
+						<td><%= dojo.street%></td>
+						<td><%= dojo.city%></td>
+						<td><%= dojo.state%></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
