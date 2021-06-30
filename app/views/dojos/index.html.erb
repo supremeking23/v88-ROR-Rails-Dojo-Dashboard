@@ -32,7 +32,7 @@
 						<th>Street</th>
 						<th>City</th>
 						<th>State</th>
-						<!-- <th>Action</th> -->
+						<th>Action</th>
 					</tr>
 				</thead>
 
@@ -43,7 +43,15 @@
 						<td><%= dojo.street%></td>
 						<td><%= dojo.city%></td>
 						<td><%= dojo.state%></td>
-						<!-- <td></td> -->
+						<td>
+							<a href="/dojos/<%= dojo.id%>" class="btn btn-small">Show</a> |
+							<a href="/dojos/<%= dojo.id%>/edit" class="btn btn-small">Edit</a> |
+							<form action="/dojos/<%= dojo.id%>" method="POST">
+								<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+								<input type="hidden" name="_method" value="delete" />
+								<button class="btn btn-small waves-effect waves-light red darken-3" type="submit" name="action">Delete</button>
+							</form>
+						</td>
 					</tr>
 					<% end %>
 				</tbody>
