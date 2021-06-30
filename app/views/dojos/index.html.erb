@@ -5,6 +5,24 @@
 		</div>
 	</div>
 
+	<% if flash[:notice] %>
+	<div class="row">
+		<div style="color: #fff" class="col s12 green darken-3">
+			<p><%=flash[:notice]%></p>
+		</div>
+	</div>
+	<% end %>
+	<!--  -->
+	<% if flash[:alert] %>
+	<div class="row">
+		<div style="color: #fff" class="col s12 red darken-3">
+			<% flash[:alert].each do |alert| %>
+			<p><%=alert%></p>
+			<%end%>
+		</div>
+	</div>
+	<% end %>
+
 	<div class="row">
 		<div class="col s12">
 			<table class="responsive-table striped">
@@ -14,6 +32,7 @@
 						<th>Street</th>
 						<th>City</th>
 						<th>State</th>
+						<!-- <th>Action</th> -->
 					</tr>
 				</thead>
 
@@ -24,10 +43,15 @@
 						<td><%= dojo.street%></td>
 						<td><%= dojo.city%></td>
 						<td><%= dojo.state%></td>
+						<!-- <td></td> -->
 					</tr>
 					<% end %>
 				</tbody>
 			</table>
 		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12"><%= link_to 'New Dojo',dojos_new_path, class: "btn" %></div>
 	</div>
 </div>
