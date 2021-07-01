@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   post 'dojos/create'
   get 'dojos' => 'dojos#index'
   get 'dojos/:id' => "dojos#show"
+  
+  # need in order
+  get 'dojos/:id/students/new' => "dojos#new_student"
+  post 'dojos/:id/students/create' => "dojos#create_student"
+  get 'dojos/:id/students/:student_id' => "dojos#show_student"
+  get 'dojos/:id/students/:student_id/edit' => "dojos#edit_student"
+  patch 'dojos/:id/students/:student_id' => "dojos#update_student"
+  delete 'dojos/:id/students/:student_id' => 'dojos#delete_student'
 
   get 'dojos/:id/edit' => 'dojos#edit'
 

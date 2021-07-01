@@ -17,3 +17,9 @@
 form {
 	display: inline-block;
 }
+
+h1.branch,
+.edit-dojo-btn {
+	display: inline-block;
+	vertical-align: middle;
+}
